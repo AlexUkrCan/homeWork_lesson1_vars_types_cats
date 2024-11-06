@@ -217,3 +217,17 @@ let coursesAndDurationArray = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}
 ];
+const course = coursesAndDurationArray[0];
+
+if (course.monthDuration > 5) {
+    console.log('Супер');
+}
+
+const course2 = coursesAndDurationArray[1];
+if (course2.monthDuration > 5) {
+    console.log('Супер');
+}
+
+if (coursesAndDurationArray[2].monthDuration > 5) {
+    console.log('Супер');
+}
