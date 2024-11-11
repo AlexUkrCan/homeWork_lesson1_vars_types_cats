@@ -60,3 +60,74 @@ function listOfProducts(products, amountOfRows) {
 listOfProducts("Cars", 7);
 
 //створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список (ul li) та виводить його через document.write
+function regularElements(arraysOfRegular) {
+    document.write(`<ul>`);
+    for (const item of arraysOfRegular) {
+        document.write(`<li>${item}</li>`);
+    }
+    document.write(`</ul>`);
+}
+regularElements([123, 3565327, 777, "Dodge", "Pontiac", true]);
+
+//створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+function arrayOfPersons(persons) {
+    for (const person of persons) {
+        document.write(` <div>${person.id} ${person.name} ${person.age}</div> `);
+    }
+}
+arrayOfPersons([
+    {id:1, name:'Sasha', age:27},
+    {id:2, name:'Andriy', age:32},
+    {id:3, name:'Oleg', age:34},
+    {id:4, name:'Anton', age:18},
+    {id:5, name:'Jeka', age:33},
+    ]);
+
+//створити функцію яка повертає найменьше число з масиву
+
+function minimumDigit(arrNumbers) {
+    let minNumberOfArray = arrNumbers[0];
+        for (let i = 0; i < arrNumbers.length; i++) {
+            if (arrNumbers[i] < minNumberOfArray) {
+                minNumberOfArray = arrNumbers[i];
+            }
+    }
+    console.log(minNumberOfArray);
+}
+minimumDigit([12, 14, 7, 8, 9, 3, 23]);
+
+//- створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+function sum(arr) {
+    let sumOfDigits = 0;
+    for (const sumElements of arr) {
+        sumOfDigits = sumOfDigits + sumElements;
+    }
+    return sumOfDigits;
+}
+console.log(sum([12,12,16]));
+
+//створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відповідних індексах
+// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+let arraySwap = [17, 19,32, 27,49];
+function swap(arraySwap , index1, index2) {
+    let temporarySwap = arraySwap[index1];
+    arraySwap[index1] = arraySwap[index2];
+    arraySwap[index2] = temporarySwap;
+    return arraySwap;
+}
+console.log(swap(arraySwap, 0, 1));
+
+//Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+//Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
+function exchange(sumUAH,currencyValues,exchangeCurrency) {
+    let myCurrency;
+    for (const item of currencyValues) {
+        if (item.currency === exchangeCurrency) {
+            myCurrency = item;
+        }
+        let result = sumUAH/myCurrency.value;
+        return result;
+    }
+
+}
+console.log(exchange(500,[{currency:'USD',value:39},{currency:'EUR',value:42}],'USD'));
