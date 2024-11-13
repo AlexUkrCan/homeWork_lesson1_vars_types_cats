@@ -69,6 +69,7 @@ function regularElements(arraysOfRegular) {
 }
 regularElements([123, 3565327, 777, "Dodge", "Pontiac", true]);
 
+
 //створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 function arrayOfPersons(persons) {
     for (const person of persons) {
