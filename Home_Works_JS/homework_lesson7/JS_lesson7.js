@@ -197,12 +197,24 @@ arrAnimals.myForEach((item, i, arr) => {
     console.log(`Поточний елемент масиву: ${item} ,поточний індекс: ${i} , масив: ${arr} 
   `);
 });
-let filtered = [17, 5, 6, 270, 58];
-let newFiltered = [];
-Array.prototype.myFilter = function isBigEnough(value) {
-    for (const value of filtered) {
-        if (value >= 10) {
-            return newFiltered.push(value);
+
+const data = [1, 2, 3, 4, 5];
+
+const arrData = [1, 2, 3, 4, 5];
+
+Array.prototype.myFilter = function (fn) {
+    const filtered = [];
+
+    for (let i = 0; i < this.length; i++) {
+        if (fn(this[i])) {
+            filtered.push(this[i]);
         }
     }
-}
+
+    return filtered;
+};
+
+const filteredData = arrData.myFilter(function (el) {
+    if (el > 2) return el;
+});
+console.log(filteredData);
