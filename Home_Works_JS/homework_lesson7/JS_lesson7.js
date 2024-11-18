@@ -210,11 +210,11 @@ Array.prototype.myFilter = function (fn) {
             filtered.push(this[i]);
         }
     }
-
     return filtered;
 };
 
-const filteredData = arrData.myFilter(function (el) {
-    if (el > 2) return el;
+const filteredData = arrData.myFilter(function (element) {
+    if (element > 2)
+        return element;
 });
 console.log(filteredData);
